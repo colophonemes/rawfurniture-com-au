@@ -1,2 +1,7 @@
-rawfurniture.com.au
-proxy / localhost:8081
+www.rawfurniture.com.au {
+    proxy / 172.31.18.91:8081
+}
+
+rawfurniture.com.au {
+    proxy / 172.31.18.91:8081
+}
