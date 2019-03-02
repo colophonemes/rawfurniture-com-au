@@ -1,0 +1,40 @@
+version: "3"
+services:
+  wordpress:
+    image: wordpress:5.0.3-apache
+    depends_on:
+      - mysql
+    environment:
+      WORDPRESS_DB_HOST: mysql
+      WORDPRESS_DB_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+    ports:
+      - "8081:80"
+    networks:
+      - mysql
+    volumes:
+      - ./wordpress/plugins:/var/www/html/wp-content/plugins
+      - ./wordpress/themes:/var/www/html/wp-content/themes
+      - ./wordpress/uploads:/var/www/html/wp-content/uploads
+  mysql:
+    image: mysql:5.5.62
+    networks:
+      - mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+    volumes:
+      - ./.mysqldata:/var/lib/mysql
+      - ./database_backup.sql:/docker-entrypoint-initdb.d/wordpress.sql
+  caddy:
+    image: abiosoft/caddy:0.11.4-no-stats
+    volumes:
+      - .caddy:/root/.caddy  # to save certificates on disk
+      - ./Caddyfile:/etc/Caddyfile  # to mount custom Caddyfile
+    ports:
+      - "2015:2015"
+      - "80:80"
+      - "443:443"
+    depends_on:
+      - wordpress
+
+networks:
+  mysql:

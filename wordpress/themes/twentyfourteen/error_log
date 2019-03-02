@@ -1,0 +1,6 @@
+[11-Oct-2015 15:02:31 UTC] PHP Fatal error:  Call to undefined function get_header() in /home/raw20594/public_html/wp-content/themes/twentyfourteen/404.php on line 10
+[27-Apr-2016 22:40:32 UTC] PHP Fatal error:  Call to undefined function get_header() in /home/raw20594/public_html/wp-content/themes/twentyfourteen/404.php on line 10
+[06-Mar-2017 12:40:24 UTC] PHP Fatal error:  Call to undefined function get_header() in /home/raw20594/public_html/wp-content/themes/twentyfourteen/404.php on line 10
+[18-Nov-2017 08:38:01 UTC] PHP Fatal error:  Call to undefined function get_header() in /home/raw20594/public_html/wp-content/themes/twentyfourteen/404.php on line 10
+[20-Jan-2018 12:21:11 UTC] PHP Fatal error:  Call to undefined function get_header() in /home/raw20594/public_html/wp-content/themes/twentyfourteen/404.php on line 10
+[17-Jul-2018 17:32:44 UTC] PHP Fatal error:  Call to undefined function get_header() in /home/raw20594/public_html/wp-content/themes/twentyfourteen/404.php on line 10

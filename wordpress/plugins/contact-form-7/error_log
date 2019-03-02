@@ -1,0 +1,2 @@
+[25-Nov-2017 19:30:48 UTC] PHP Fatal error:  Call to undefined function plugin_basename() in /home/raw20594/public_html/wp-content/plugins/contact-form-7/wp-contact-form-7.php on line 36
+[01-Aug-2018 07:02:39 UTC] PHP Fatal error:  Call to undefined function plugin_basename() in /home/raw20594/public_html/wp-content/plugins/contact-form-7/wp-contact-form-7.php on line 36

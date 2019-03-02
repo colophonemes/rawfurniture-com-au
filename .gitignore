@@ -1,0 +1,10 @@
+.DS_Store
+node_modules
+npm-debug.log
+.env
+yarn-debug.log
+yarn-error.log
+/*.sql
+.caddy
+.mysqldata
+wordpress/uploads
