@@ -7,4 +7,5 @@ yarn-error.log
 /*.sql
 .caddy
 .mysqldata
-wordpress/uploads
+wordpress/**/uploads
+wordpress/ssmptp.conf
