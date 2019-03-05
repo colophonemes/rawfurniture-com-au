@@ -8,7 +8,7 @@ services:
       WORDPRESS_DB_HOST: mysql
       WORDPRESS_DB_PASSWORD: ${MYSQL_ROOT_PASSWORD}
     ports:
-      - "8081:80"
+      - "80:80"
     networks:
       - mysql
     volumes:
@@ -24,17 +24,17 @@ services:
     volumes:
       - ./.mysqldata:/var/lib/mysql
       - ./database_backup.sql:/docker-entrypoint-initdb.d/wordpress.sql
-  caddy:
-    image: abiosoft/caddy:0.11.4-no-stats
-    volumes:
-      - .caddy:/root/.caddy  # to save certificates on disk
-      - ./Caddyfile:/etc/Caddyfile  # to mount custom Caddyfile
-    ports:
-      - "2015:2015"
-      - "80:80"
-      - "443:443"
-    depends_on:
-      - wordpress
+  # caddy:
+  #   image: abiosoft/caddy:0.11.4-no-stats
+  #   volumes:
+  #     - .caddy:/root/.caddy  # to save certificates on disk
+  #     - ./Caddyfile:/etc/Caddyfile  # to mount custom Caddyfile
+  #   ports:
+  #     - "2015:2015"
+  #     - "80:80"
+  #     - "443:443"
+  #   depends_on:
+  #     - wordpress
 
 networks:
   mysql:
