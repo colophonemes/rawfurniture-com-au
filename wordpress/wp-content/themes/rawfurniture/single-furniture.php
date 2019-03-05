@@ -5,7 +5,7 @@ Template Name: Full Width Page
 ?>
 
 <?php get_header(); ?>
-			
+
 			<div id="content" class="clearfix row">
 				<?php $referer = wp_get_referer(); if($referer && stristr($referer,'filter')) : ?>
 					<div class="col-xs-12 back-to-filtered">
@@ -15,15 +15,15 @@ Template Name: Full Width Page
 				<div id="main" class="col col-lg-12 clearfix" role="main">
 
 					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-					
+
 					<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article">
-						
+
 						<header>
-							
+
 							<div class="page-header"><h1><?php the_title(); ?></h1></div>
-						
+
 						</header> <!-- end article header -->
-					
+
 						<section class="post_content">
 							<div class="row">
 							<div class="col-md-6 furniture-item">
@@ -39,16 +39,16 @@ Template Name: Full Width Page
 								<?php if (get_field('sold') === true ): ?>
 									<span class="badge sold-flag sold-flag-single">sold</span>
 								<?php endif; ?>
-								<?php 
+								<?php
 								$output = "";
 
-								$args = array( 'post_type' => 'attachment', 'numberposts' => -1, 'post_status' => null, 'post_parent' => $post->ID ); 
+								$args = array( 'post_type' => 'attachment', 'numberposts' => -1, 'post_status' => null, 'post_parent' => $post->ID );
 								$attachments = get_posts($args);
-								
+
 								if ($attachments) {
 									if(count($attachments)>1){
 										$output = '<div id="carousel-gallery" class="carousel slide" data-ride="carousel">';
-										
+
 										// carousel indicators
 										$output.= '<ol class="carousel-indicators">';
 											foreach(array_keys($attachments) as $attachment){
@@ -101,29 +101,29 @@ Template Name: Full Width Page
 
 								<?php if (get_field('sold') === true ): ?>
 								<p class="sold h4">please note: this item has already been sold</p>
-								<?php else : ?>
+								<?php /*<?php else : ?>
 								<hr>
 								<h3>Make an enquiry about this piece</h3>
-								<?php echo do_shortcode( '[contact-form-7 id="81" title="Furniture Enquiry"]' ); ?>
+								<?php echo do_shortcode( '[contact-form-7 id="81" title="Furniture Enquiry"]' ); ?>*/?>
 								<?php endif; ?>
 
 							</div>
 							</div>
 						</section> <!-- end article section -->
-						
+
 						<footer>
-			
+
 							<p class="clearfix"><?php the_tags('<span class="tags">' . __("Tags","wpbootstrap") . ': ', ', ', '</span>'); ?></p>
-							
+
 						</footer> <!-- end article footer -->
-					
+
 					</article> <!-- end article -->
-					
-					
-					<?php endwhile; ?>	
-					
+
+
+					<?php endwhile; ?>
+
 					<?php else : ?>
-					
+
 					<article id="post-not-found">
 					    <header>
 					    	<h1><?php _e("Not Found", "wpbootstrap"); ?></h1>
@@ -134,13 +134,13 @@ Template Name: Full Width Page
 					    <footer>
 					    </footer>
 					</article>
-					
+
 					<?php endif; ?>
-			
+
 				</div> <!-- end #main -->
-    
+
 				<?php //get_sidebar(); // sidebar 1 ?>
-    
+
 			</div> <!-- end #content -->
 
 <?php get_footer(); ?>
